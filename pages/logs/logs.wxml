@@ -1,0 +1,101 @@
+<view class="">
+  <scroll-view scroll-y="true" style='height:1334rpx;'>
+    <swiper indicator-dots='true' autoplay='true' interval="3000">
+    
+      <swiper-item wx:for="{{data}}" wx:if="{{item.recommend}}">
+        <view class='infoimg' data-party="{{item.id}}" bindtap="NaviDetail" style='background-image:url({{item.img}})'>
+          <image src="{{item.creater.avatarUrl}}" class='headimg'>
+          </image>
+          <text class='nickname'>{{item.creater.nickname}}</text>
+          <text class='w title'>{{item.title}}</text>
+          
+          <image src="/images/left.png" class='leff'>
+          </image>
+          <text class='num'>
+            报名人数:{{item.users.length}}/{{item.max_attendance}}
+          </text>
+        </view>
+      </swiper-item>
+    </swiper>
+    <!--view class="tip">
+    <text class='date'>发布活动请加微信1494515960,大学生都能看到哦</text></view-->
+    <!--button class='create' bindtap='createParty'>
+  开Party
+</button-->
+    <view class='container'>
+    
+    <view class='item' wx:for="{{data}}">
+      <view class='infoitem' data-party="{{item.id}}" bindtap="NaviDetail">
+        <view class='title'>
+          <text>{{item.title}}</text>
+          <text class='date'>{{item.start_time}}</text>
+        </view>
+       <view class="lef">
+        <text class='num'>
+              想约   {{item.max_attendance}}   人
+            </text>
+       </view>
+       
+
+        <view class="infoimg" style='background:url({{item.img}});background-size:cover;'></view>
+        <view style=''>
+          <view class='creater'>
+            <image src="{{item.creater.avatarUrl}}" class='headimg'>
+            </image>
+            <text class='nickname'>{{item.creater.nickname}}</text>
+            <text class='createrf'>发起人</text>
+          </view>
+          <view class="grayline"></view>
+          <view class='info'>
+            <text class='profile'> {{item.profile}}</text>
+           
+          </view>
+        </view>
+      </view>
+    </view>
+    </view>
+  </scroll-view>
+
+  <!--<view class='' wx:for="{{data}}">
+      <view class='infoimg' data-party="{{item.id}}" bindtap="NaviDetail" style='background-image:url({{item.img}})'>
+        <image src="{{item.creater.avatarUrl}}" class='headimg'>
+        </image>
+        <text class='w nickname'>{{item.creater.nickname}}</text>
+        <text class='w title'>{{item.title}}</text>
+        <text class='w profile'>
+          {{item.profile}}
+        </text>
+        <text class='w num'>
+          报名人数:{{item.users.length}}/{{item.max_attendance}}
+        </text>
+      </view>
+</view>-->
+
+  <!--<scroll-view class="infos" scroll-y="true">
+    <view class="information" wx:for="{{data}}">
+      <view>
+        <view class="headphoto" style='background:url({{item.img}});background-size:cover;'></view>
+        <view class="name"><text>【{{item.party_type}}】</text>{{item.title}}</view>
+        <view class="place">{{item.profile}}
+        </view>
+        -->
+
+  <!--<view></view>-->
+
+  <!--<view class="time">报名截止:{{ item.end_time}}</view>
+        <view class="numofpeople">已报名人数:{{item.users.length}}限制人数:{{item.max_attendance}}</view>-->
+
+  <!--<text class="join" data-party="{{item.id}}" bindtap="NaviJoin">加入</text>-->
+
+  <!--<image class="heart" src="../../images/heart.png"></image>-->
+
+  <!--<view class='btns'>
+          <view class='f'>收藏</view>
+          <view wx:if="{{item.users.length == item.max_attendance}}" class='add max'>报名人数已到最大限额</view>
+          <view wx:else class='add' data-party="{{item.id}}" bindtap="NaviDetail">报名参加</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>-->
+  
+</view>

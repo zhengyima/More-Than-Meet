@@ -1,0 +1,34 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/home/home"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "不如遇见",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": "true"
+  },
+  "tabBar": {
+    "color": "#dddddd",
+    "selectedColor": "#E64A43",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/found.png",
+        "selectedIconPath": "images/found_put.png",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my_put.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

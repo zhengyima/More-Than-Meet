@@ -19,10 +19,10 @@
   margin-top: 200px;
 }
 .mycontainer{
-  padding:10rpx 0;height:1200rpx
+  padding:10rpx 0;height:1400rpx
 }
 .myview{
-  height:1150rpx;
+  height:1350rpx;
   width:96%;
   margin:10rpx 2%;
   background-color: #efe0db;
@@ -33,14 +33,14 @@
 }
 .wx-image{
   width: 100%; 
-  height: 60%;
+  height: 55%;
   margin-bottom: 0;
   padding-bottom:0; 
 }
 .info-view{
   margin-top:0;
   padding-top:0;
-  height:40%;
+  height:45%;
   background-color: #f3e0db;
 }
 
@@ -62,7 +62,7 @@
   padding-right:3%;
   font-family:STXihei;
   color:#7c7b7b;
-  font-size:28rpx;
+  font-size:32rpx;
 }
 .fee-view{
   margin-left:3%;
@@ -115,7 +115,7 @@
 }
 .yue-view{
   width:100%;
-  margin-top:10rpx;
+  margin-top:40rpx;
 }
 .yue-btn{
   background: #e2998d;

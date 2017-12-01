@@ -6,9 +6,9 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#3c2b2e",
     "navigationBarTitleText": "不如遇见",
-    "navigationBarTextStyle": "black",
+    "navigationBarTextStyle": "white",
     "enablePullDownRefresh": "true"
   },
   "tabBar": {

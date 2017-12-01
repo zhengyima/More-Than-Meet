@@ -1,11 +1,11 @@
 {
   "pages": [
-    "pages/home/home",
-    "pages/form/form",
-    "pages/datelist/datelist",
+    "pages/Home/Home",
+    "pages/Form/Form",
+    "pages/Order/Order",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/detail/detail"
+    "pages/Detail/Detail"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -21,13 +21,13 @@
     "backgroundColor": "#413639",
     "list": [
       {
-        "pagePath": "pages/home/home",
+        "pagePath": "pages/Home/Home",
         "iconPath": "images/found.png",
         "selectedIconPath": "images/found_put.png",
         "text": "发现"
       },
       {
-        "pagePath": "pages/datelist/datelist",
+        "pagePath": "pages/Order/Order",
         "iconPath": "images/my.png",
         "selectedIconPath": "images/my_put.png",
         "text": "我的"

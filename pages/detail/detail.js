@@ -1,3 +1,4 @@
+
 //logs.js
 const util = require('../../utils/util.js')
 
@@ -38,7 +39,7 @@ Page({
   yue_ta_func: function (event) {
     console.log("click!");
     wx.navigateTo({
-      url: '../form/form'
+      url: '../Form/Form'
     })
   },
 })

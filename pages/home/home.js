@@ -38,7 +38,7 @@ Page({
   yue_func: function (event) {
     console.log("click!");
     wx.navigateTo({
-      url: '../detail/detail'
+      url: '../Detail/Detail'
     })
   },
 })

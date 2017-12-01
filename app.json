@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/home/home"
+    "pages/home/home",
+    "pages/datelist/datelist"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -25,6 +26,12 @@
       },
       {
         "pagePath": "pages/home/home",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my_put.png",
+        "text": "我的"
+      },
+      {
+        "pagePath": "pages/datelist/datelist",
         "iconPath": "images/my.png",
         "selectedIconPath": "images/my_put.png",
         "text": "我的"

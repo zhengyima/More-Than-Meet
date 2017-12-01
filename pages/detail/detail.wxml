@@ -1,0 +1,87 @@
+<!--index.wxml-->
+<view class="container mycontainer">
+  <scroll-view scroll-y="true" class="my-scroll">
+    <view class="view1">
+      <swiper indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="#ffffff" class="myswiper">
+        <block wx:for="{{imgUrls}}">
+          <swiper-item class="my-swiper-item">
+            <image src="{{item}}" class="wx-image" />
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="baseinfo_view">
+        <view class="info_view">
+          <view class="info1">
+            <view class="name">胡雅琪</view>
+            <view class="gender">女</view>
+          </view>
+          <view class="info2">
+            <view class="age">
+              <text class="gray-info">23岁</text>
+            </view>
+            <view class="height">
+              <text class="gray-info">166cm</text>
+            </view>
+            <view class="weight">
+              <text class="gray-info">49kg</text>
+            </view>
+            <view class="xingzuo">
+              <text class="gray-info">摩羯座</text>
+            </view>
+          </view>
+          <view class="info3">
+            <view class="school">
+              <text class="gray-info-tiny">中央美术学院</text>
+            </view>
+            <view class="major">
+              <text class="gray-info-tiny">首饰设计</text>
+            </view>
+            <view class="grade">
+              <text class="gray-info-tiny">大四</text>
+            </view>
+          </view>
+        </view>
+        <view class="like_view">
+          <view class="like_btn_view">
+            <image src="../../images/link.png" class="btn-img"/>
+            <image src="../../images/like.png" class="btn-img"/>
+          </view>
+          <view class="like_info_view">
+            <text class="gray-info-tiny">77人喜欢</text>
+          </view>
+        </view>
+
+      </view>
+    </view>
+    <view class="view2">
+      <view class="date-info">
+        <view class="date-time">
+          <text class="gray-info-tiny">可约时间 : </text>
+          <text class="gray-info">11:00</text>
+        </view>
+        <view class="date-range">
+          <text class="gray-info-tiny">可约范围 : </text>
+          <text class="gray-info">汉纸和妹纸</text>
+        </view>
+      </view>
+      <view class="salary-info">
+        <text class="salary-name">时薪：</text>
+        <text class="salary-num">200</text>
+      </view>
+    </view>
+    
+    <view class="view3">
+      <view class="jianjie gray-info">简介:</view>
+      <view class="extra-info gray-info-tiny">爱手办，爱逛街，资深吃货        </view>
+    </view>
+  </scroll-view>
+  <view class="bottom-bar">
+    <view class="view-btn-1">
+    <button class="sendgift">送礼</button>
+    </view>
+    <view class="view-btn-2">
+      <button class="yueta">立即约TA</button>
+    </view>
+  </view>
+</view>

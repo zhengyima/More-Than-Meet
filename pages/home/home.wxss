@@ -19,10 +19,10 @@
   margin-top: 200px;
 }
 .mycontainer{
-  padding:10rpx 0;height:1250rpx
+  padding:10rpx 0;height:1100rpx
 }
 .myview{
-  height:1200rpx;
+  height:1050rpx;
   width:96%;
   margin:15rpx 2%;
 }
@@ -38,14 +38,14 @@
 }
 .wx-image{
   width: 100%; 
-  height: 55%;
+  height: 50%;
   margin-bottom: 0;
   padding-bottom:0; 
 }
 .info-view{
   margin-top:0;
   padding-top:0;
-  height:45%;
+  height:50%;
   background-color: #f3e0db;
 }
 

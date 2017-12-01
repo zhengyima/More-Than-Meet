@@ -1,0 +1,223 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+.mycontainer{
+  padding:0 0;
+  background-color: #f2f2f2;
+  height:1300rpx;
+}
+.my-scroll{
+  height:100%;
+}
+.view1{
+  height:750rpx;
+}
+.myview{
+  height:1050rpx;
+  width:96%;
+  margin:15rpx 2%;
+}
+.myswiper{
+  height:77%;
+}
+.my-swiper-item{
+  background-color: #efe0db;
+}
+.wx-image{
+  width: 100%; 
+  height: 100%;
+  margin-bottom: 0;
+  padding-bottom:0; 
+}
+.baseinfo_view{
+  height:23%;
+  display:flex;
+  background-color: #ffffff;
+}
+.info_view{
+  width:70%;
+}
+.info1{
+  height:20%;
+  display:flex;
+}
+.name{
+  width:25%;
+  margin:10rpx 15rpx;
+  font-weight: 300;
+  font-size:40rpx;
+  font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+}
+.gender{
+  margin:10rpx 0rpx;
+  font-weight: 300;
+  font-size:38rpx;
+  font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+  color:#fca89c;
+}
+.info2{
+  height:20%;
+  display:flex;
+  margin-top:15px;
+}
+.age{
+  width:15%;
+  padding-left:15rpx;
+}
+.height{
+  height:30%;
+  margin-left:12rpx
+}
+.weight{
+  margin-left:15rpx;
+  height:20%;
+}
+.xingzuo{
+  margin-left:15rpx;
+  height:30%;
+}
+.info3{
+  height:35%;
+  display:flex;
+
+  margin-top:5px;
+}
+.school{
+  width:30%;
+  padding-left:15rpx;
+}
+.major{
+  margin-left:10rpx;
+  width:20%;
+}
+.grade{
+  margin-left:10rpx;
+  width:20%;
+}
+.like_view{
+  width:30%;
+}
+.like_btn_view{
+  height:40%;
+  display:flex;
+}
+.like_info_view{
+  margin-left:30%;
+}
+.gray-info{
+  color:#7c7b7b;
+  font-size:32rpx;
+  font-weight:300;
+  font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+}
+.gray-info-tiny{
+  color:#7c7b7b;
+  font-size:27rpx;
+  font-weight:300;
+  font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+}
+.btn-img{
+  height:80rpx;
+  width:80rpx;
+  margin-bottom: 0;
+  padding-bottom:0; 
+}
+
+.view2{
+  height:175rpx;
+  background-color:#ffffff;
+  margin-top:30rpx;
+  padding-left:15rpx;
+  display:flex;
+}
+.date-info{
+  width:70%;
+  height:100%;
+  padding-top:10rpx;
+}
+.date-time{
+  width:100%;
+}
+.salary-info{
+  width:30%;
+  padding-top:15rpx;
+}
+.salary-info{
+  width:30%;
+}
+.date-range{
+  width:100%;
+}
+.salary-name{
+  color:#7c7b7b;
+  font-size:35rpx;
+  font-weight:400;
+  font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+}
+.salary-num{
+  color:#fc9885;
+  font-size:40rpx;
+  font-weight:400;
+  font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+}
+
+.view3{
+  height:175rpx;
+  width:100%;
+  background-color:#ffffff;
+  margin-top:30rpx;
+  padding-left:15rpx;
+  padding-top:30rpx;
+}
+.jianjie{
+  width:100%;
+}
+.extra-info{
+  width:100%;
+}
+.bottom-bar{
+  position:fixed;
+  top:92%;
+  width:100%;
+  height:8%;
+  display:flex;
+}
+.view-btn-1{
+  width:40%;
+  height:100%;
+  background-color: #249cd3;
+}
+.view-btn-2{
+  width:60%;
+  height:100%;
+  background-color: #fc3768;
+}
+.sendgift{
+  width:100%;
+  height:100%;
+  background-color: #249cd3;
+  color:#ffffff;
+}
+.yueta{
+  width:100%;
+  height:100%;
+  background-color: #fc3768;
+  color:#ffffff;
+}

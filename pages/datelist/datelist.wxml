@@ -6,7 +6,30 @@
     autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="myswiper">
       <block wx:for="{{imgUrls}}">
         <swiper-item>
-          <image src="{{item}}" class="wx-image" />
+
+          <view class="date-list row-flex">
+            <view class="head-view">
+              <image src="/images/head1.jpg" class="head-image" />
+            </view>
+            <view class="a-view">
+                <text class="a1-view row-flex">周耕墨</text>
+                <text class="a2-view row-flex">已成功联系</text>
+            </view>
+            <view class="b-view">
+                <button class="b-btn">私信TA</button>
+            </view>
+          </view>
+
+          <view class="date-list row-flex">
+            <view class="head-view">
+              <image src="/images/head3.jpg" class="head-image" />
+            </view>
+            <view class="a-view">
+                <text class="a1-view row-flex">马正一</text>
+                <text class="a2-view row-flex">待对方回复</text>
+                <text class="a3-view row-flex">已等待：4小时37分</text>
+            </view>
+          </view>
 
           <view class="info-view">
             <view class="row-flex">

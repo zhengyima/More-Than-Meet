@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/datelist/datelist",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/home/home",
-    "pages/datelist/datelist"
+    "pages/home/home"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -19,6 +19,12 @@
     "backgroundColor": "#413639",
     "list": [
       {
+        "pagePath": "pages/datelist/datelist",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my_put.png",
+        "text": "我的"
+      },
+      {
         "pagePath": "pages/index/index",
         "iconPath": "images/found.png",
         "selectedIconPath": "images/found_put.png",
@@ -26,12 +32,6 @@
       },
       {
         "pagePath": "pages/home/home",
-        "iconPath": "images/my.png",
-        "selectedIconPath": "images/my_put.png",
-        "text": "我的"
-      },
-      {
-        "pagePath": "pages/datelist/datelist",
         "iconPath": "images/my.png",
         "selectedIconPath": "images/my_put.png",
         "text": "我的"

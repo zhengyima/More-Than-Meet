@@ -35,10 +35,10 @@ Page({
       duration: e.detail.value
     })
   },
-  yue_ta_func: function (event) {
+  order_func: function (event) {
     console.log("click!");
-    wx.navigateTo({
-      url: '../form/form'
-    })
+    //wx.navigateTo({
+    //  url: '../form/form'
+    //})
   },
 })

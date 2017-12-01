@@ -221,3 +221,26 @@
   background-color: #fc3768;
   color:#ffffff;
 }
+.meili{
+  position:absolute;
+  color: #fff;
+  text-align: center;
+  left: 0;
+  right: 0;
+  text-shadow: #a5a5a5 0 4rpx 0;
+  font-size:25rpx;
+  font-weight:300;
+  font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+}
+.times{
+  position:absolute;
+  color: #fff;
+  text-align: center;
+  left: 0;
+  right: 0;
+  top:30rpx;
+  text-shadow: #a5a5a5 0 4rpx 0;
+  font-size:25rpx;
+  font-weight:300;
+  font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+}

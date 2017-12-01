@@ -1,0 +1,140 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.mycontainer{
+  padding:0 0;
+  background-color: #f2f2f2;
+  height:1150rpx;
+  width:95%;
+}
+.myview{
+  height:100%;
+}
+.view1{
+  height:18%;
+  width:100%;
+  background-color: #ffffff;
+}
+.hour_view{
+  height:40%;
+  width:100%;
+  display:flex;
+  padding-left:30rpx;
+  padding-top:30rpx;
+}
+.tiny-black{
+  font-weight: 300;
+  font-size:28rpx;
+  color:#000000;
+  font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+}
+.hour_input{
+  border-bottom-style: solid; 
+  border-bottom-width: 1px;
+  border-bottom-color: #9f9999;
+  color:#000000;
+  font-weight: 300;
+  font-size:28rpx;
+  font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+}
+.gray-info{
+  color:#7c7b7b;
+  font-size:32rpx;
+  font-weight:300;
+  font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+}
+.money_view{
+  height:60%;
+  width:100%;
+  display:flex;
+  padding-left:30rpx;
+}
+.salary-num{
+  color:#fc9885;
+  font-size:32rpx;
+  font-weight:400;
+  font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+}
+.text2{
+  margin-left:50rpx;
+  margin-right:50rpx;
+  font-size:32rpx;
+  font-weight:400;
+  font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+}
+.text3{
+  margin-right:50rpx;
+}
+.text4{
+  margin-right:50rpx;
+}
+.text5{
+  margin-right:50rpx;
+}
+.view2{
+  padding-top:20rpx;
+  padding-left:20rpx;
+  height:30%;
+  width:100%;
+  background-color: #ffffff;
+  margin-top:20rpx;
+}
+.note-view{
+  height:80%;
+  width:100%;
+}
+
+.mytextarea{
+  height:80%;
+  width:90%;
+  margin-left:5%;
+  color:#000000;
+  font-size:32rpx;
+  font-weight:300;
+  font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+}
+.view3{
+  padding-left:20rpx;
+
+  padding-top:20rpx;
+  height:50%;
+  width:100%;
+  background-color: #ffffff;
+  margin-top:20rpx;
+}
+.notice-view{
+  padding-left:20rpx;
+  width:90%;
+}
+.gray-info-tiny{
+  color:#7c7b7b;
+  font-size:25rpx;
+  font-weight:300;
+  font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+}
+.btn-view{
+  margin-top:100rpx;
+}
+.yue-btn{
+  background: #fba395;
+  color:#ffffff;
+  width:50%;
+}

@@ -1,9 +1,10 @@
 {
   "pages": [
+    "pages/home/home",
+    "pages/form/form",
     "pages/datelist/datelist",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/home/home",
     "pages/detail/detail"
   ],
   "window": {

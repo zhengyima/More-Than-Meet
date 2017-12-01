@@ -3,7 +3,7 @@
 
   <view class="myview">
      <swiper indicator-dots="{{indicatorDots}}"
-  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="myswiper">
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" class="myswiper">
   <block wx:for="{{imgUrls}}">
     <swiper-item class="my-swiper-item">
       <image src="{{item}}" class="wx-image" />

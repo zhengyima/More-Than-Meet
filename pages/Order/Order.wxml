@@ -6,7 +6,7 @@
         <view class="head-view">
           <image src="/images/head1.jpg" class="head-image" />
         </view>
-        <view class="a-view">
+        <view class="a-view-s">
           <text class="a1-view row-flex name">周耕墨</text>
           <text class="a2-view row-flex">已成功联系</text>
         </view>
@@ -38,7 +38,7 @@
         <view class="head-view">
           <image src="/images/girl2.jpeg" class="head-image" />
         </view>
-        <view class="a-view">
+        <view class="a-view-s">
           <text class="a1-view row-flex name">迪丽热巴</text>
           <text class="a2-view row-flex">已成功联系</text>
         </view>

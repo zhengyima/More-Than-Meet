@@ -49,6 +49,7 @@
 
 .row-flex{
   width:100%;
+  padding-right:40rpx;
   display:flex;
 }
 .name-view{
@@ -128,10 +129,12 @@
 }
 .date-list{
   margin-top:0;
-  padding-top:0;
+  padding-top:10rpx;
+  padding-bottom:10rpx;
   height:200rpx;
   background-color: #ffffff;
   border-bottom:1rpx solid;
+  width:100%;
 }
 .head-image{
   height: 200rpx;
@@ -140,12 +143,20 @@
   padding-bottom:0; 
 }
 .head-view{
-  width:30%;
+  width:200rpx;
   margin-right:0%;
 }
 .a-view{
   width:300rpx;
-  padding-left:3%;
+  padding-left:35rpx;
+  font-family:STXihei;
+  margin-right:0%;
+  font-weight: light;
+  font-size:45rpx;
+}
+.a-view-s{
+  width:240rpx;
+  padding-left:35rpx;
   font-family:STXihei;
   margin-right:0%;
   font-weight: light;

@@ -31,7 +31,13 @@
         "iconPath": "images/my.png",
         "selectedIconPath": "images/my_put.png",
         "text": "我的"
-      }
+      },
+            {
+              "pagePath": "pages/index/index",
+              "iconPath": "images/create.png",
+              "selectedIconPath": "images/create_put.png",
+              "text": "test"
+            }
     ]
   }
 }

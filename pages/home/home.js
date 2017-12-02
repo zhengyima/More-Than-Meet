@@ -1,6 +1,7 @@
 //logs.js
 const util = require('../../utils/util.js')
-
+var config = require("../../config.js")
+var app = getApp()
 Page({
   data: {
     imgUrls: [
@@ -13,8 +14,10 @@ Page({
     indicatorDots: false,
     autoplay: false,
     interval: 5000,
-    duration: 1000
+    duration: 1000,
+    lists:{},
   },
+  
   changeIndicatorDots: function (e) {
     this.setData({
       indicatorDots: !this.data.indicatorDots
@@ -36,9 +39,37 @@ Page({
     })
   },
   yue_func: function (event) {
-    console.log("click!");
+    /*console.log("click!");
     wx.navigateTo({
       url: '../Detail/Detail'
+    })*/
+    var url = '../Detail/Detail?id=' + event.currentTarget.dataset.sno;
+    console.log(url);
+    wx.navigateTo({
+      url: url,
+      success: function (e) {
+        //var page = getCurrentPages().pop();
+        //if (page == undefined || page == null) return;
+        //page.onLoad();
+      }
     })
   },
+  onLoad: function (options) {
+    var that = this;
+    wx.request({
+      url: config.host + '/home',
+      data: {},
+      method: 'GET',
+      header: {
+        'Authorization': "JWT ",
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' 
+      },
+      success: function (res) {
+        console.log(res);
+        var lists = res.data;
+        console.log(lists);
+        that.setData({ lists: lists })
+      }
+    })
+  }
 })

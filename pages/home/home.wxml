@@ -4,67 +4,58 @@
   <view class="myview">
      <swiper indicator-dots="{{indicatorDots}}"
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" class="myswiper">
-  <block wx:for="{{imgUrls}}">
+  <block wx:for="{{lists}}">
     <swiper-item class="my-swiper-item">
-      <image src="{{item}}" class="wx-image" />
+      <image src="{{item.simg}}" class="wx-image" />
       <view class="info-view">
         <view class="row-flex">
           <view class="name-view">
-            刘亦菲
+            {{item.sname}}
           </view>
           <view class="like-view">
-            79人喜欢
+            {{item.slike}}人喜欢
           </view>
         </view>
         <view class="row-2">
           <view class="fee-view">
             <text class="gray-info">邀约费</text>
-            <text class="fee-value">100元</text>
+            <text class="fee-value">{{item.swage}}元</text>
           </view>
         </view>
         <view class="row-flex">
           <view class="school-view">
-            <text class="gray-info">中央美术学院</text>
+            <text class="gray-info">{{item.sschool}}</text>
           </view>
           <view class="major-view">
-            <text class="gray-info">首饰设计</text>
+            <text class="gray-info">{{item.smajor}}</text>
           </view>
           <view class="grade-view">
-            <text class="gray-info">大二</text>
+            <text class="gray-info">{{item.sgrade}}</text>
           </view>
         </view>
         <view class="row-flex">
           <view class="xingzuo-view">
-            <text class="gray-info">白羊座</text>
+            <text class="gray-info">{{item.sxz}}</text>
           </view>
           <view class="height-view">
-            <text class="gray-info">165cm</text>
+            <text class="gray-info">{{item.sheight}}cm</text>
           </view>
         </view>
         <view class="row-flex">
           <view class="geqian-view">
-            <text class="gray-info">资深吃货，热爱摄影，希望跟同行交流</text>
+            <text class="gray-info">{{item.sinfo}}</text>
           </view>
         </view>
         <view class="row-flex">
           <view class="label-view">
-            <view class="label">
-              <text class="gray-info label-info">随意</text>
-            </view>
-            <view class="label">
-              <text class="gray-info label-info">吃饭</text>
-            </view>
-            <view class="label">
-              <text class="gray-info label-info">看电影</text>
-            </view>
-            <view class="label">
-              <text class="gray-info label-info">下午茶</text>
+            <view class="label" wx:for="{{item.labels}}">
+              <text class="gray-info label-info">{{item.lname}}</text>
             </view>
           </view>
         </view>
         <view class="row-flex">
           <view class="yue-view">
-            <button class="yue-btn" bindtap="yue_func">约 TA</button>
+            <button class="yue-btn" data-sno="{{item.sno}}"bindtap="yue_func">约 TA</button>
           </view>
         </view>
       </view>

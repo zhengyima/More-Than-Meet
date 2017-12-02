@@ -4,22 +4,22 @@
     <view class="view1">
       <view class="hour_view">
         <text class="tiny-black">预约时长：</text>
-        <input type="digit" placeholder="如1.5" class="hour_input"/>
+        <input type="number" placeholder="如3" class="hour_input" bindinput="hour_bind_input"/>
         <text class="tiny-black">小时</text>
       </view>
       <view class="money_view">
         <text class="gray-info text1" >需支付金额：</text>
-        <text class="money-text text2"> 400   </text>
+        <text class="money-text text2"> {{money_need}}   </text>
         <text class="gray-info text3" >元</text>
         <text class="gray-info text4">时薪</text>
-        <text class="salary-num text5">200</text>
+        <text class="salary-num text5">{{wage}}</text>
         <text class="gray-info text6">元</text>
       </view>
     </view>
     <view class="view2">
       <text class="gray-info">留言:</text>
       <view class="note-view">
-        <textarea placeholder="在这里输入你想对Ta说的吧~" name="textarea" class="mytextarea"/>
+        <textarea placeholder="在这里输入你想对Ta说的吧~" name="textarea" class="mytextarea" bindinput="note_bind_input"/>
       </view>
     </view>
     <view class="view3">

@@ -1,7 +1,8 @@
 
 //logs.js
 const util = require('../../utils/util.js')
-
+var config = require("../../config.js")
+var app = getApp()
 Page({
   data: {
     imgUrls: [
@@ -38,8 +39,29 @@ Page({
   },
   yue_ta_func: function (event) {
     console.log("click!");
+    var url = '../Form/Form?id=' + event.currentTarget.dataset.sno;
     wx.navigateTo({
-      url: '../Form/Form'
+      url: url
     })
   },
+  onLoad: function (options) {
+    var sno = options.id;
+    console.log(sno);
+    var that = this;
+    wx.request({
+      url: config.host + '/detail',
+      data: {sno:sno},
+      method: 'GET',
+      header: {
+        'Authorization': "JWT ",
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+      },
+      success: function (res) {
+        console.log(res);
+        var list = res.data[0];
+        console.log(list);
+        that.setData({ list: list })
+      }
+    })
+  }
 })

@@ -1,0 +1,89 @@
+<!--index.wxml-->
+<view class="container mycontainer">
+  <scroll-view scroll-y="true" class="my-scroll">
+    <view class="view1">
+      <swiper indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="#ffffff" circular="true" class="myswiper">
+        <block wx:for="{{list.images}}">
+          <swiper-item class="my-swiper-item">
+            <image src="{{item.iurl}}" class="wx-image" />
+            <text class="meili">魅力值:{{list.scharm}}</text>
+            <text class="times">已成功约见{{list.snum}}次</text>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="baseinfo_view">
+        <view class="info_view">
+          <view class="info1">
+            <view class="name">{{list.sname}}</view>
+            <view class="gender">{{list.sgender}}</view>
+          </view>
+          <view class="info2">
+            <view class="age">
+              <text class="gray-info">{{list.sage}}岁</text>
+            </view>
+            <view class="height">
+              <text class="gray-info">{{list.sheight}}cm</text>
+            </view>
+            <view class="weight">
+              <text class="gray-info">{{list.sweight}}kg</text>
+            </view>
+            <view class="xingzuo">
+              <text class="gray-info">{{list.sxz}}</text>
+            </view>
+          </view>
+          <view class="info3">
+            <view class="school">
+              <text class="gray-info-tiny">{{list.sschool}}</text>
+            </view>
+            <view class="major">
+              <text class="gray-info-tiny">{{list.smajor}}</text>
+            </view>
+            <view class="grade">
+              <text class="gray-info-tiny">{{list.sgrade}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="like_view">
+          <view class="like_btn_view">
+            <image src="../../images/link.png" class="btn-img"/>
+            <image src="../../images/like.png" class="btn-img"/>
+          </view>
+          <view class="like_info_view">
+            <text class="gray-info-tiny">{{list.slike}}人喜欢</text>
+          </view>
+        </view>
+
+      </view>
+    </view>
+    <view class="view2">
+      <view class="date-info">
+        <view class="date-time">
+          <text class="gray-info-tiny">可约时间 : </text>
+          <text class="gray-info">{{list.stime}}</text>
+        </view>
+        <view class="date-range">
+          <text class="gray-info-tiny">可约范围 : </text>
+          <text class="gray-info">{{list.srange}}</text>
+        </view>
+      </view>
+      <view class="salary-info">
+        <text class="salary-name">时薪：</text>
+        <text class="salary-num">{{list.swage}}</text>
+      </view>
+    </view>
+    
+    <view class="view3">
+      <view class="jianjie gray-info">简介:</view>
+      <view class="extra-info gray-info-tiny">{{list.sinfo}}       </view>
+    </view>
+  </scroll-view>
+  <view class="bottom-bar">
+    <view class="view-btn-1">
+    <button class="sendgift">送礼</button>
+    </view>
+    <view class="view-btn-2">
+      <button class="yueta" data-sno="{{list.sno}}" bindtap="yue_ta_func">立即约TA</button>
+    </view>
+  </view>
+</view>

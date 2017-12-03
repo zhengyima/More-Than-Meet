@@ -87,7 +87,7 @@ Page({
     if(that.data.hour){
       wx.request({
         url: config.host + '/form_submit',
-        data: { hour: that.data.hour*10,note:that.data.note,bno:7,sno:that.data.sno,need:that.data.money_need },
+        data: { hour: that.data.hour * 10, note: that.data.note, bno: wx.getStorageSync('openid'),sno:that.data.sno,need:that.data.money_need },
         method: 'GET',
         header: {
           'Authorization': "JWT ",
@@ -98,6 +98,49 @@ Page({
           if(res.data.status == 1){
             wx.showToast({
               title: '成功',
+              icon: 'success',
+              duration: 2000
+            });
+            /*
+            setTimeout(function () {
+              wx.switchTab({
+                url: '/pages/Home/Home',
+                success: function (e) {
+                  var page = getCurrentPages().pop();
+                  if (page == undefined || page == null) return;
+                  page.onLoad();
+                }
+              }) //要延时执行的代码  
+            }, 3000) //延迟时间 这里是1秒  */
+            wx.request({
+              url: config.host + '/pay',
+              header: {
+                'Authorization': "JWT ",
+                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+              },
+              data: {bno: wx.getStorageSync('openid')},
+              method: 'GET',
+              success: function (res) {
+                console.log(res);
+                wx.requestPayment({
+                  timeStamp: res.data.timeStamp,
+                  nonceStr: res.data.nonceStr,
+                  package: res.data.package,
+                  signType: res.data.signType,
+                  paySign: res.data.paySign,
+                  'success': function (res) {
+                    console.log(res)
+                  },
+                  'fail': function (res) {
+                    console.log(res)
+                  }
+                })
+              }
+            })
+          }
+          else if(res.data.status == 2){
+            wx.showToast({
+              title: '您已经约过了~',
               icon: 'success',
               duration: 2000
             })

@@ -1,3 +1,4 @@
+
 //logs.js
 const util = require('../../utils/util.js')
 var config = require("../../config.js")
@@ -5,11 +6,13 @@ var app = getApp()
 Page({
   data: {
     imgUrls: [
+      '../../images/girl2.jpeg',
+      '../../images/girl.jpeg',
       'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1493698928333&di=99be91f1067ce820af8235607706813a&imgtype=0&src=http%3A%2F%2Fimg.tupianzj.com%2Fuploads%2Fallimg%2F160412%2F9-160412091538.jpg',
-      'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1493698928333&di=ae56672831512cc7d4cd1e26d31269aa&imgtype=0&src=http%3A%2F%2Fimg.tupianzj.com%2Fuploads%2Fallimg%2F160412%2F9-160412091540.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
+      'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1493698928333&di=ae56672831512cc7d4cd1e26d31269aa&imgtype=0&src=http%3A%2F%2Fimg.tupianzj.com%2Fuploads%2Fallimg%2F160412%2F9-160412091540.jpg'
     ],
-    indicatorDots: false,
+    indicatorDots: true,
+
     autoplay: false,
     interval: 5000,
     duration: 1000
@@ -34,11 +37,20 @@ Page({
       duration: e.detail.value
     })
   },
-  onLoad: function (options){
+  yue_ta_func: function (event) {
+    console.log("click!");
+    var url = '../Form/Form?id=' + event.currentTarget.dataset.sno;
+    wx.navigateTo({
+      url: url
+    })
+  },
+  onLoad: function (options) {
+    var sno = options.id;
+    console.log(sno);
     var that = this;
     wx.request({
-      url: config.host + '/order',
-      data: { "bno": wx.getStorageSync('openid')},
+      url: config.host + '/detail',
+      data: {sno:sno},
       method: 'GET',
       header: {
         'Authorization': "JWT ",
@@ -46,15 +58,10 @@ Page({
       },
       success: function (res) {
         console.log(res);
-        var lists = res.data;
-        //console.log(lists);
-        that.setData({ lists: lists })
+        var list = res.data[0];
+        console.log(list);
+        that.setData({ list: list })
       }
     })
-  },
-  onShow: function () {
-    var page = getCurrentPages().pop();
-    if (page == undefined || page == null) return;
-    page.onLoad();// 页面显示
-  },
+  }
 })

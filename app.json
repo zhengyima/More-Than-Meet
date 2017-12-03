@@ -5,7 +5,8 @@
     "pages/Order/Order",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/Detail/Detail"
+    "pages/Detail/Detail",
+    "pages/auth/auth"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -32,12 +33,12 @@
         "selectedIconPath": "images/my_put.png",
         "text": "我的"
       },
-            {
-              "pagePath": "pages/index/index",
-              "iconPath": "images/create.png",
-              "selectedIconPath": "images/create_put.png",
-              "text": "test"
-            }
+      {
+        "pagePath": "pages/auth/auth",
+        "iconPath": "images/create.png",
+        "selectedIconPath": "images/create_put.png",
+        "text": "认证"
+      }
     ]
   }
 }

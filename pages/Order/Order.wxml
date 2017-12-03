@@ -2,47 +2,20 @@
 <view class="container mycontainer">
   <scroll-view scroll-y="true" class="my-scroll">
     <view class="myview"> 
-      <view class="date-list row-flex">
+      <view class="date-list row-flex" wx:for="{{lists}}">
         <view class="head-view">
-          <image src="/images/head1.jpg" class="head-image" />
+          <image src="{{item.simg}}" class="head-image" />
         </view>
-        <view class="a-view-s">
-          <text class="a1-view row-flex name">周耕墨</text>
-          <text class="a2-view row-flex">已成功联系</text>
+        <view class="a-view-s" wx:if="{{item.ostatus == 1}}" >
+          <text class="a1-view row-flex name">{{item.sname}}</text>
+          <text class="a2-view row-flex" >已成功联系</text>
         </view>
-        <view class="b-view">
-          <button class="b-btn">私信TA</button>
-        </view>
-      </view>
-      <view class="date-list row-flex">
-        <view class="head-view">
-          <image src="/images/head3.jpg" class="head-image" />
-        </view>
-        <view class="a-view">
-          <text class="a1-view row-flex name">马正一</text>
+        <view class="a-view" wx:if="{{item.ostatus == 0}}">
+          <text class="a1-view row-flex name">{{item.sname}}</text>
           <text class="a2-view row-flex">待对方回复</text>
           <text class="a3-view row-flex">已等待：4小时37分 </text>
         </view>
-      </view>
-      <view class="date-list row-flex">
-        <view class="head-view">
-          <image src="/images/girl.jpeg" class="head-image" />
-        </view>
-        <view class="a-view">
-          <text class="a1-view row-flex name">刘亦菲</text>
-          <text class="a2-view row-flex">待对方回复</text>
-          <text class="a3-view row-flex">已等待：1小时01分 </text>
-        </view>
-      </view>
-      <view class="date-list row-flex">
-        <view class="head-view">
-          <image src="/images/girl2.jpeg" class="head-image" />
-        </view>
-        <view class="a-view-s">
-          <text class="a1-view row-flex name">迪丽热巴</text>
-          <text class="a2-view row-flex">已成功联系</text>
-        </view>
-        <view class="b-view">
+        <view class="b-view" wx:if="{{item.ostatus == 1}}">
           <button class="b-btn">私信TA</button>
         </view>
       </view>

@@ -1,4 +1,5 @@
 //app.js
+var config = require("config.js")
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -7,9 +8,50 @@ App({
     wx.setStorageSync('logs', logs)
 
     // 登录
+
+  },
+  globalData: {
+    userInfo: null
+  },
+  onload:function(){
     wx.login({
-      success: res => {
-        console.log(res)
+      success: loginres => {
+        //console.log(res)
+        wx.getUserInfo({
+          success: res => {
+            //console.log(loginres)
+            //console.log(res)
+            // 可以将 res 发送给后台解码出 unionId
+            this.globalData.userInfo = res.userInfo
+            if (loginres.code) {
+              wx.request({
+                url: config.host + '/login',
+                header: {
+                  "Content-Type": "application/x-www-form-urlencoded"
+                },
+                method: 'GET',
+                data: {
+                  code: loginres.code,
+                  iv: res.iv,
+                  encryeddata: res.encryptedData,
+                  signature: res.signature,
+                  rawData: res.rawData,
+                },
+                success: function (data) {
+
+                  console.log(data.data.openid);
+                  wx.setStorageSync('openid', data.data.openid);
+                  //cb();
+                }
+              })
+            }
+            // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+            // 所以此处加入 callback 以防止这种情况
+            if (this.userInfoReadyCallback) {
+              this.userInfoReadyCallback(res)
+            }
+          }
+        })
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })
@@ -20,7 +62,7 @@ App({
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: res => {
-              console.log(res)
+              //console.log(res)
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
 
@@ -35,7 +77,9 @@ App({
       }
     })
   },
-  globalData: {
-    userInfo: null
-  }
+  reload: function () {
+    var page = getCurrentPages().pop();
+    if (page == undefined || page == null) return;
+    page.onLoad();
+  },
 })

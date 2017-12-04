@@ -51,6 +51,7 @@ Page({
       money_need: e.detail.value * w
     })
     console.log(e.detail.value)
+    console.log(this.data.money_need)
   },
   note_bind_input: function (e) {
     this.setData({
@@ -85,69 +86,67 @@ Page({
   order_func:function(){
     var that = this;
     if(that.data.hour){
+      //console.log(res);
       wx.request({
-        url: config.host + '/form_submit',
-        data: { hour: that.data.hour * 10, note: that.data.note, bno: wx.getStorageSync('openid'),sno:that.data.sno,need:that.data.money_need },
-        method: 'GET',
+        url: config.host + '/pay',
         header: {
           'Authorization': "JWT ",
           'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
         },
+        data: { bno: wx.getStorageSync('openid'), hour: that.data.hour * 10, note: that.data.note,  sno: that.data.sno, need: that.data.money_need*100},
+        method: 'GET',
         success: function (res) {
-          console.log(res);
-          if(res.data.status == 1){
-            /*
-            setTimeout(function () {
-              wx.switchTab({
-                url: '/pages/Home/Home',
-                success: function (e) {
-                  var page = getCurrentPages().pop();
-                  if (page == undefined || page == null) return;
-                  page.onLoad();
-                }
-              }) //要延时执行的代码  
-            }, 3000) //延迟时间 这里是1秒  */
-            wx.request({
-              url: config.host + '/pay',
-              header: {
-                'Authorization': "JWT ",
-                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-              },
-              data: {bno: wx.getStorageSync('openid')},
-              method: 'GET',
-              success: function (res) {
-                console.log(res);
-                wx.requestPayment({
-                  timeStamp: res.data.timeStamp,
-                  nonceStr: res.data.nonceStr,
-                  package: res.data.package,
-                  signType: res.data.signType,
-                  paySign: res.data.paySign,
-                  'success': function (res) {
-                    console.log(res);
-                    wx.showToast({
-                      title: '成功，3秒后跳转',
-                      icon: 'success',
-                      duration: 2000
-                    });
-                    setTimeout(function () {
-                      wx.switchTab({
-                        url: '/pages/Home/Home',
-                        success: function (e) {
-                          var page = getCurrentPages().pop();
-                          if (page == undefined || page == null) return;
-                          page.onLoad();
-                        }
-                      }) //要延时执行的代码  
-                    }, 3000)
-                  },
-                  'fail': function (res) {
-                    console.log(res)
-                  }
-                })
-              }
+          console.log({ bno: wx.getStorageSync('openid'), hour: that.data.hour * 10, note: that.data.note, sno: that.data.sno, need: that.data.money_need });
+          if(res.data.my_status == 2){
+            wx.showToast({
+              title: '您已经约过了~',
+              icon: 'success',
+              duration: 2000
             })
+            return ;
           }
+          if(res.data.my_status ==0){
+            wx.showToast({
+              title: '失败',
+              icon: 'success',
+              duration: 2000
+            })
+            return ;
+          }
+          console.log(res);
+          console.log("before rp");
+          wx.requestPayment({
+            timeStamp: res.data.timeStamp,
+            nonceStr: res.data.nonceStr,
+            package: res.data.package,
+            signType: res.data.signType,
+            paySign: res.data.paySign,
+            'success': function (res) {
+              console.log("rp success");
+              console.log(res);
+              wx.showToast({
+                title: '成功，3秒后跳转',
+                icon: 'success',
+                duration: 2000
+              });
+              setTimeout(function () {
+                wx.switchTab({
+                  url: '/pages/Home/Home',
+                  success: function (e) {
+                    var page = getCurrentPages().pop();
+                    if (page == undefined || page == null) return;
+                      page.onLoad();
+                  }
+                }) //要延时执行的代码  
+              }, 3000)
+            },
+            'fail': function (res) {
+              console.log(res)
+            }
+          })
+        }
+      })
+          /*
           else if(res.data.status == 2){
             wx.showToast({
               title: '您已经约过了~',
@@ -161,12 +160,10 @@ Page({
               icon: 'success',
               duration: 2000
             })
-          }
+          }*/
           //var lists = res.data;
           //console.log(lists);
           //that.setData({ lists: lists })
-        }
-      })
     }
     else{
       wx.showToast({

@@ -44,8 +44,41 @@ Page({
       url: url
     })
   },
+  like_func:function(event){
+    console.log("like!");
+    var sno = event.currentTarget.dataset.sno;
+    console.log({ sno: sno, bno: wx.getStorageSync('openid') });
+    wx.request({
+      url: config.host + '/like',
+      data: { sno: sno, bno: wx.getStorageSync('openid') },
+      method: 'GET',
+      success: function (res) {
+        console.log(res);
+        if(res.data.status == 1){
+          console.log("success");
+          wx.showToast({
+            title: '点赞成功',
+            icon: 'success',
+            duration: 2000
+          })
+          setTimeout(function () {
+            wx.redirectTo({
+              url: '../Detail/Detail?id='+sno,
+            })
+          },1000);
+        }
+        else if (res.data.status == 2){
+          console.log("您已经赞过人家了~");
+        }
+        else{
+          console.log("点赞失败了...")
+        }
+      }
+    })
+  },
   onLoad: function (options) {
     var sno = options.id;
+    this.setData({id:sno});
     console.log(sno);
     var that = this;
     wx.request({

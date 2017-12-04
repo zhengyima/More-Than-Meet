@@ -96,11 +96,6 @@ Page({
         success: function (res) {
           console.log(res);
           if(res.data.status == 1){
-            wx.showToast({
-              title: '成功',
-              icon: 'success',
-              duration: 2000
-            });
             /*
             setTimeout(function () {
               wx.switchTab({
@@ -129,7 +124,22 @@ Page({
                   signType: res.data.signType,
                   paySign: res.data.paySign,
                   'success': function (res) {
-                    console.log(res)
+                    console.log(res);
+                    wx.showToast({
+                      title: '成功，3秒后跳转',
+                      icon: 'success',
+                      duration: 2000
+                    });
+                    setTimeout(function () {
+                      wx.switchTab({
+                        url: '/pages/Home/Home',
+                        success: function (e) {
+                          var page = getCurrentPages().pop();
+                          if (page == undefined || page == null) return;
+                          page.onLoad();
+                        }
+                      }) //要延时执行的代码  
+                    }, 3000)
                   },
                   'fail': function (res) {
                     console.log(res)

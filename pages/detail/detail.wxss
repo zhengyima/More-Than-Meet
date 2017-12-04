@@ -148,19 +148,19 @@
   display:flex;
 }
 .date-info{
-  width:70%;
+  width:60%;
   height:100%;
   padding-top:20rpx;
 }
 .date-time{
   width:100%;
 }
-.salary-info{
-  width:30%;
+.val-info{
+  width:40%;
   padding-top:15rpx;
 }
 .salary-info{
-  width:30%;
+  height:40%;
 }
 .date-range{
   width:100%;

@@ -67,10 +67,17 @@
           <text class="gray-info">{{list.srange}}</text>
         </view>
       </view>
-      <view class="salary-info">
-        <text class="salary-name">时薪：</text>
-        <text class="salary-num">{{list.swage}}</text>
+      <view class="val-info">
+        <view class="salary-info">
+          <text class="salary-name">时薪：</text>
+          <text class="salary-num">{{list.swage}}</text>
+        </view>
+        <view class="salary-info">
+          <text class="salary-name">魅力值：</text>
+          <text class="salary-num">{{list.scharm}}</text>
+        </view>
       </view>
+      
     </view>
     
     <view class="view3">

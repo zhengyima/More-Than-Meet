@@ -1,6 +1,7 @@
 //logs.js
 const util = require('../../utils/util.js')
 var config = require("../../config.js")
+var app = getApp()
 Page({
   data: {
     imgUrls: [

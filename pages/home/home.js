@@ -1,6 +1,7 @@
 //logs.js
 const util = require('../../utils/util.js')
 var config = require("../../config.js")
+var app = getApp();
 Page({
   data: {
     imgUrls: [
@@ -54,21 +55,23 @@ Page({
     })
   },
   onLoad: function (options) {
-    var that = this;
-    wx.request({
-      url: config.host + '/home',
-      data: {},
-      method: 'GET',
-      header: {
-        'Authorization': "JWT ",
-        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' 
-      },
-      success: function (res) {
-        console.log(res);
-        var lists = res.data;
-        console.log(lists);
-        that.setData({ lists: lists })
-      }
-    })
+      app.getUserinfo();
+      console.log("asd");
+      var that = this;
+      wx.request({
+        url: config.host + '/home',
+        data: {},
+        method: 'GET',
+        header: {
+          'Authorization': "JWT ",
+          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+        },
+        success: function (res) {
+          console.log(res);
+          var lists = res.data;
+          console.log(lists);
+          that.setData({ lists: lists })
+        }
+      })
   }
 })

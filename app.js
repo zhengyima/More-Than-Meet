@@ -12,8 +12,7 @@ App({
   globalData: {
     userInfo: null
   },
-  onload:function(){
-    console.log("onload in!");
+  getUserinfo:function(){
     wx.login({
       success: loginres => {
         console.log("login success in!");
@@ -21,6 +20,13 @@ App({
         wx.getUserInfo({
           success: res => {
             console.log("getuserinfo success in!");
+            console.log({
+              code: loginres.code,
+              iv: res.iv,
+              encryeddata: res.encryptedData,
+              signature: res.signature,
+              rawData: res.rawData,
+            });
             //console.log(loginres)
             //console.log(res)
             // 可以将 res 发送给后台解码出 unionId
@@ -45,6 +51,9 @@ App({
                   console.log(data.data.openid);
                   wx.setStorageSync('openid', data.data.openid);
                   //cb();
+                },
+                fail:function(data){
+                  console.log(data);
                 }
               })
             }

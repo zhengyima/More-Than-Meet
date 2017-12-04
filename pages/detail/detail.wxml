@@ -80,7 +80,7 @@
   </scroll-view>
   <view class="bottom-bar">
     <view class="view-btn-1">
-    <button class="sendgift">送礼</button>
+    <button class="sendgift" bindtap="yue_ta_func" data-sno="{{list.sno}}">点赞</button>
     </view>
     <view class="view-btn-2">
       <button class="yueta" data-sno="{{list.sno}}" bindtap="yue_ta_func">立即约TA</button>

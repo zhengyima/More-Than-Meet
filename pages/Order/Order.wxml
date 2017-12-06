@@ -2,20 +2,32 @@
 <view class="container mycontainer">
   <scroll-view scroll-y="true" class="my-scroll">
     <view class="myview"> 
+      <view class="date-list row-flex">
+        <view class="head-view">
+          <image src="https://mina.mapglory.com/static/images/logo.jpg" class="head-image" />
+        </view>
+        <view class="a-view-s" >
+          <text class="a1-view row-flex name">小如</text>
+          <text class="a2-view row-flex" >已成功联系</text>
+        </view>
+        <view class="b-view">
+          <button class="b-btn">私信TA</button>
+        </view>
+      </view>
       <view class="date-list row-flex" wx:for="{{lists}}">
         <view class="head-view">
-          <image src="{{item.simg}}" class="head-image" />
+          <image src="https://mina.mapglory.com/static/{{item.simg}}" class="head-image" />
         </view>
-        <view class="a-view-s" wx:if="{{item.ostatus == 1}}" >
+        <view class="a-view-s" wx:if="{{item.ostatus == 3}}" >
           <text class="a1-view row-flex name">{{item.sname}}</text>
           <text class="a2-view row-flex" >已成功联系</text>
         </view>
-        <view class="a-view" wx:if="{{item.ostatus == 0}}">
+        <view class="a-view" wx:if="{{item.ostatus == 1}}">
           <text class="a1-view row-flex name">{{item.sname}}</text>
           <text class="a2-view row-flex">待对方回复</text>
           <text class="a3-view row-flex">已等待：4小时37分 </text>
         </view>
-        <view class="b-view" wx:if="{{item.ostatus == 1}}">
+        <view class="b-view" wx:if="{{item.ostatus == 3}}">
           <button class="b-btn">私信TA</button>
         </view>
       </view>

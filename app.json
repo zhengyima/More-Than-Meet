@@ -3,7 +3,6 @@
     "pages/Home/Home",
     "pages/Form/Form",
     "pages/Order/Order",
-    "pages/index/index",
     "pages/logs/logs",
     "pages/Detail/Detail",
     "pages/auth/auth"

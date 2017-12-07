@@ -1,13 +1,70 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+<view class="container mycontainer">
+
+  <view class="myview">
+     <swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" class="myswiper">
+  <block wx:for="{{lists}}">
+    <swiper-item class="my-swiper-item">
+      <image src="https://mina.mapglory.com/static/{{item.simg}}" class="wx-image" />
+      <view class="info-view">
+        <view class="row-flex">
+          <view class="name-view">
+            {{item.sname}}
+          </view>
+          <view class="like-view">
+            {{item.slike}}人喜欢
+          </view>
+        </view>
+        <view class="row-2">
+          <view class="fee-view">
+            <text class="gray-info">邀约费</text>
+            <text class="fee-value">{{item.swage}}元</text>
+          </view>
+        </view>
+        <view class="row-flex">
+          <view class="school-view">
+            <text class="gray-info">{{item.sschool}}</text>
+          </view>
+          <view class="major-view">
+            <text class="gray-info">{{item.smajor}}</text>
+          </view>
+          <view class="grade-view">
+            <text class="gray-info">{{item.sgrade}}</text>
+          </view>
+        </view>
+        <view class="row-flex">
+          <view class="xingzuo-view">
+            <text class="gray-info">{{item.sxz}}</text>
+          </view>
+          <view class="height-view">
+            <text class="gray-info">{{item.sheight}}cm</text>
+          </view>
+          <view class="weight-view">
+            <text class="gray-info">{{item.sweight}}kg</text>
+          </view>
+        </view>
+        <view class="row-flex">
+          <view class="geqian-view">
+            <text class="gray-info">{{item.sinfo}}</text>
+          </view>
+        </view>
+        <view class="row-flex">
+          <view class="label-view">
+            <view class="label" wx:for="{{item.labels}}">
+              <text class="gray-info label-info">{{item.lname}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="row-flex">
+          <view class="yue-view">
+            <button class="yue-btn" data-sno="{{item.sno}}"bindtap="yue_func">约 TA</button>
+          </view>
+        </view>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
+
   </view>
 </view>

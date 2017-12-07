@@ -40,6 +40,9 @@
           <view class="height-view">
             <text class="gray-info">{{item.sheight}}cm</text>
           </view>
+          <view class="weight-view">
+            <text class="gray-info">{{item.sweight}}kg</text>
+          </view>
         </view>
         <view class="row-flex">
           <view class="geqian-view">

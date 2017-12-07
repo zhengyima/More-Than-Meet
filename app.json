@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/Index/Index",
     "pages/Home/Home",
     "pages/Form/Form",
     "pages/Order/Order",
@@ -21,7 +22,7 @@
     "backgroundColor": "#413639",
     "list": [
       {
-        "pagePath": "pages/Home/Home",
+        "pagePath": "pages/Index/Index",
         "iconPath": "images/found.png",
         "selectedIconPath": "images/found_put.png",
         "text": "发现"

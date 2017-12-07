@@ -6,7 +6,7 @@
     autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="#ffffff" circular="true" class="myswiper">
         <block wx:for="{{list.images}}">
           <swiper-item class="my-swiper-item">
-            <image src="https://mina.mapglory.com/static/{{item.iurl}}" class="wx-image" />
+            <image src="https://mina.mapglory.com/static/{{item.iurl}}" class="wx-image"   bindlongpress='image_longPress' data-src="https://mina.mapglory.com/static/{{item.iurl}}" />
             <text class="meili">魅力值:{{list.scharm}}</text>
             <text class="times">已成功约见{{list.snum}}次</text>
           </swiper-item>

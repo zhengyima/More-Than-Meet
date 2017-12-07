@@ -6,52 +6,25 @@
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" class="myswiper">
   <block wx:for="{{lists}}">
     <swiper-item class="my-swiper-item">
-      <image src="https://mina.mapglory.com/static/{{item.simg}}" class="wx-image" />
+      <image src="https://mina.mapglory.com/static/{{item.simg}}" class="wx-image" bindlongpress='image_longPress' data-src="https://mina.mapglory.com/static/{{item.simg}}" />
       <view class="info-view">
         <view class="row-flex">
           <view class="name-view">
             {{item.sname}}
           </view>
+          <view class="gender-view-girl" wx:if="{{item.sgender == '女'}}">
+            ♀
+          </view>
+          <view class="gender-view-boy" wx:if="{{item.sgender == '男'}}">
+            ♂
+          </view>
           <view class="like-view">
             {{item.slike}}人喜欢
           </view>
         </view>
-        <view class="row-2">
-          <view class="fee-view">
-            <text class="gray-info">邀约费</text>
-            <text class="fee-value">{{item.swage}}元</text>
-          </view>
-        </view>
-        <view class="row-flex">
-          <view class="school-view">
-            <text class="gray-info">{{item.sschool}}</text>
-          </view>
-          <view class="major-view">
-            <text class="gray-info">{{item.smajor}}</text>
-          </view>
-          <view class="grade-view">
-            <text class="gray-info">{{item.sgrade}}</text>
-          </view>
-        </view>
-        <view class="row-flex">
-          <view class="xingzuo-view">
-            <text class="gray-info">{{item.sxz}}</text>
-          </view>
-          <view class="height-view">
-            <text class="gray-info">{{item.sheight}}cm</text>
-          </view>
-          <view class="weight-view">
-            <text class="gray-info">{{item.sweight}}kg</text>
-          </view>
-        </view>
-        <view class="row-flex">
-          <view class="geqian-view">
-            <text class="gray-info">{{item.sinfo}}</text>
-          </view>
-        </view>
         <view class="row-flex">
           <view class="label-view">
-            <view class="label" wx:for="{{item.labels}}">
+            <view class="newlabel" wx:for="{{item.labels}}">
               <text class="gray-info label-info">{{item.lname}}</text>
             </view>
           </view>

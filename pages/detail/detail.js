@@ -37,6 +37,33 @@ Page({
       duration: e.detail.value
     })
   },
+  image_longPress: function (e) {
+    console.log(e.currentTarget.dataset.src);
+    wx.downloadFile({
+      url: e.currentTarget.dataset.src,
+      success: function (res) {
+        console.log(res)
+        wx.saveImageToPhotosAlbum({
+          filePath: res.tempFilePath,
+          success: function (res) {
+            console.log(res);
+            wx.showToast({
+              title: '图片保存成功',
+              icon: 'success',
+              duration: 2000
+            })
+          },
+          fail: function (res) {
+            console.log(res);
+            console.log('fail');
+          }
+        })
+      },
+      fail: function () {
+        console.log('fail');
+      }
+    })
+  },
   yue_ta_func: function (event) {
     console.log("click!");
     var url = '../Form/Form?id=' + event.currentTarget.dataset.sno;

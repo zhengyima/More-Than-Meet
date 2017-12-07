@@ -131,7 +131,7 @@ Page({
               });
               setTimeout(function () {
                 wx.switchTab({
-                  url: '/pages/Home/Home',
+                  url: '/pages/Order/Order',
                   success: function (e) {
                     var page = getCurrentPages().pop();
                     if (page == undefined || page == null) return;

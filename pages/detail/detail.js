@@ -56,6 +56,11 @@ Page({
           fail: function (res) {
             console.log(res);
             console.log('fail');
+            wx.showToast({
+              title: '图片保存失败了...',
+              icon: 'success',
+              duration: 2000
+            })
           }
         })
       },
